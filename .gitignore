@@ -1,0 +1,4 @@
+instantclient-basic-*.zip
+__pycache__/
+*.pyc
+venv/
