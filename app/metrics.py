@@ -2,9 +2,12 @@ from app.db import engine, SessionLocal
 from app.models import SlowQuery, LongTransactions
 import logging
 from datetime import datetime
+from prometheus_client import start_http_server, Summary
+REQUEST_TIME = Summary('slow_query_response_time_seconds', 'Time spent processing slow queries')
 
 logger = logging.getLogger(__name__)
 
+@REQUEST_TIME.time()
 def get_slow_queries():
     try:
         with engine.connect() as conn:
@@ -43,6 +46,7 @@ def get_slow_queries():
         logger.error(f"Failed to get slow queries: {str(e)}")
         return {"error": str(e)}
 
+@REQUEST_TIME.time()
 def get_long_running_transactions():
     try:
         with engine.connect() as conn:
