@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📦 Database Performance Monitoring and Query Analytics Dashboard (Dockerized)
 
 A lightweight, containerized tool for real-time database performance monitoring and query analytics. Built with FastAPI and Python, it connects to Oracle DB, tracks long-running queries, logs performance metrics, and serves them over RESTful APIs. Visualize data with Grafana or extend it with Prometheus integration.
@@ -79,5 +78,3 @@ http://localhost:8000/metrics/long_transactions
 
 Created for educational and prototyping use. Extend as needed for production.
 =======
-# db_monitor
->>>>>>> 8a116a234d924a71b2791263c33e07d45101b217
